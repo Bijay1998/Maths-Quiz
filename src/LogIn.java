@@ -91,7 +91,7 @@ public class LogIn extends JFrame {
 					String sql = "Select * from Quiz where email='"+user.getText()+"' and password='"+pass.getText().toString()+"'";
 					ResultSet rs = stmt.executeQuery(sql);
 					if(rs.next()){
-						JOptionPane.showMessageDialog(null, "Successful");
+						JOptionPane.showMessageDialog(null, "Login Successful");
 						Quiz quiz  = new Quiz();
 						
 						

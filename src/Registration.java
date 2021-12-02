@@ -96,15 +96,13 @@ public class Registration extends JFrame {
 					pst.setString(3, pass);
 					pst.setString(4, emaill);
 					pst.executeUpdate();
-					JOptionPane.showMessageDialog(null,"Data insertion Successfull!");
+					JOptionPane.showMessageDialog(null,"User registration successfull!");
 					LogIn login = new LogIn();
 					login.setVisible(true);
 					
 				}catch(Exception e1){
 					e1.printStackTrace();
-				}
-				
-				
+				}			
 				
 					
 					

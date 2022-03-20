@@ -7,7 +7,8 @@ import javax.swing.*;
  *
  */
 
-//Class using action listner interface
+/**
+ *  Class using action listner interface */
 public class Quiz implements ActionListener{
 	
 	String[] questions = 	{
@@ -64,6 +65,11 @@ public class Quiz implements ActionListener{
 			}
 		});
 	
+	/**
+	 * initializing the quiz class ane making the frame
+	 * calling nextQuestion method 
+	 */
+	
 	public Quiz() {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setSize(650,650);
@@ -73,8 +79,8 @@ public class Quiz implements ActionListener{
 		
 		textfield.setBounds(0,0,650,50);
 		textfield.setBackground(new Color(25,25,25));
-		textfield.setForeground(new Color(25,255,0));
-		textfield.setFont(new Font("Ink Free",Font.BOLD,30));
+		textfield.setForeground(new Color(245, 164, 66));
+		textfield.setFont(new Font("GlasglowSerial",Font.BOLD,30));
 		textfield.setBorder(BorderFactory.createBevelBorder(1));
 		textfield.setHorizontalAlignment(JTextField.CENTER);
 		textfield.setEditable(false);
@@ -83,7 +89,7 @@ public class Quiz implements ActionListener{
 		textarea.setLineWrap(true);
 		textarea.setWrapStyleWord(true);
 		textarea.setBackground(new Color(25,25,25));
-		textarea.setForeground(new Color(25,255,0));
+		textarea.setForeground(new Color(245, 164, 66));
 		textarea.setFont(new Font("MV Boli",Font.BOLD,25));
 		textarea.setBorder(BorderFactory.createBevelBorder(1));
 		textarea.setEditable(false);
@@ -143,7 +149,7 @@ public class Quiz implements ActionListener{
 		
 		time_label.setBounds(535,475,100,25);
 		time_label.setBackground(new Color(50,50,50));
-		time_label.setForeground(new Color(255,0,0));
+		time_label.setForeground(new Color(245, 164, 66));
 		time_label.setFont(new Font("MV Boli",Font.PLAIN,16));
 		time_label.setHorizontalAlignment(JTextField.CENTER);
 		time_label.setText("TIMER");
@@ -184,6 +190,9 @@ public class Quiz implements ActionListener{
 		
 		nextQuestion();
 	}
+	/**
+	 *void method to go to next question
+	 */
 	public void nextQuestion() {
 		
 		if(index>=total_questions) {
@@ -232,6 +241,9 @@ public class Quiz implements ActionListener{
 			}
 			displayAnswer();
 	}
+	/**
+	 * void method to show the answer to user
+	 */
 	public void displayAnswer() {
 		
 		timer.stop();
@@ -273,6 +285,9 @@ public class Quiz implements ActionListener{
 		pause.setRepeats(false);
 		pause.start();
 	}
+	/**
+	 *  method to show result
+	 */
 	public void results(){
 		
 		buttonA.setEnabled(false);

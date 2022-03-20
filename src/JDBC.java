@@ -1,12 +1,22 @@
+
+/**
+ * Importing slq*/
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
 
+
+/**
+ * @author bijay
+ * This is the jdbc class that connects the application with database.
+ *
+ */
 public class JDBC{
+	
 	Connection con = null;
 	java.sql.PreparedStatement pst;
+	/**The dbconnect method to connect with the database
+	 * @return returns connection if succesfull and null if not
+	 */
 	public static Connection dbconnect(){
 		try{
 			Class.forName("com.mysql.cj.jdbc.Driver");

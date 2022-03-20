@@ -27,14 +27,32 @@ import java.sql.SQLException;
 import javax.swing.JPasswordField;
 
 
+/**
+ * @author bijay
+ * This is the login class that inherits the function of jframe
+ *
+ */
 public class LogIn extends JFrame {
 
+	/**
+	 * private contentPane for other components
+	 * user textfield
+	 * passwordfield for password
+	 */
 	private JPanel contentPane;
+	/**
+	 * user textfield	
+	 */
 	private JTextField user;
+	/**
+	 * passwordfield for password
+	 */
 	private JPasswordField pass;
 
+	
 	/**
-	 * Launch the application.
+	 * @param args array of string
+	 * makes login frame visible
 	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -50,7 +68,9 @@ public class LogIn extends JFrame {
 	}
 
 	/**
+	 * initialize login.
 	 * Create the frame.
+	 * adding all the needed element of frames like button jpane, label, etc.
 	 */
 	public LogIn() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -65,7 +85,7 @@ public class LogIn extends JFrame {
 		lblLoginPage.setBounds(119, 11, 279, 39);
 		contentPane.add(lblLoginPage);
 		
-		JLabel lblUsername = new JLabel("USERNAME");
+		JLabel lblUsername = new JLabel("EMAIL");
 		lblUsername.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		lblUsername.setBounds(44, 89, 228, 26);
 		contentPane.add(lblUsername);
@@ -83,6 +103,12 @@ public class LogIn extends JFrame {
 		
 		JButton btnLogin = new JButton("LOGIN");
 		btnLogin.addActionListener(new ActionListener() {
+			/**
+			 *event driven programming 
+			 *after login button is pressed user credentials are checked with the database
+			 *takes user to quiz page if correct 
+			 *displays username or password incorrect message
+			 */
 			public void actionPerformed(ActionEvent arg0) {
 				try{
 					Class.forName("com.mysql.cj.jdbc.Driver");
@@ -91,8 +117,12 @@ public class LogIn extends JFrame {
 					String sql = "Select * from Quiz where email='"+user.getText()+"' and password='"+pass.getText().toString()+"'";
 					ResultSet rs = stmt.executeQuery(sql);
 					if(rs.next()){
-						JOptionPane.showMessageDialog(null, "Login Successful");
-						Quiz quiz  = new Quiz();
+						JOptionPane.showMessageDialog(null, "Login Successful");						
+						Quiz q = new Quiz();	
+						
+						
+						
+						
 						
 						
 					

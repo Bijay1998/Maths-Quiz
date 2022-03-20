@@ -16,17 +16,42 @@ import javax.swing.JTextField;
 
 import java.sql.*;
 
-//registration class inheriting the funcions of jframe class
+
+/**
+ * @author bijay
+ *registration class inheriting the funcions of jframe class
+ */
 public class Registration extends JFrame {
 
+	/**
+	 * contentPane for other components
+	 * firstname textfield for user to enter firstname 
+	 * lastname for user to enter lastname
+	 * password for user to enter password 
+	 * email for emain insertion
+	 */
 	private JPanel contentPane;
+	/**
+	 *firstname textfield for user to enter firstname 
+	 */
 	private JTextField firstname;
+	/**
+	 *lastname for user to enter lastname 
+	 */
 	private JTextField lastname;
+	/**
+	 *email for emain insertion 
+	 */
 	private JTextField email;
+	/**
+	 *password for user to enter password 
+	 */
 	private JTextField password;
 
+	
 	/**
-	 * Launch the application.
+	 * @param args array of string
+	 *  Launch the application
 	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -41,10 +66,14 @@ public class Registration extends JFrame {
 		});
 	}
 
+	
 	/**
-	 * Create the frame.
+	 * iniatializing the connection
 	 */
 	Connection con =null;
+	/**
+	 * Registration class for creating the registration frame and inserting data to database
+	 */
 	public Registration() {
 		con = JDBC.dbconnect();
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -100,6 +129,7 @@ public class Registration extends JFrame {
 					LogIn login = new LogIn();
 					login.setVisible(true);
 					
+					
 				}catch(Exception e1){
 					e1.printStackTrace();
 				}			
@@ -148,5 +178,8 @@ public class Registration extends JFrame {
 		password.setBounds(172, 211, 158, 20);
 		contentPane.add(password);
 		password.setColumns(10);
+		
+		dispose();
 	}
+
 }

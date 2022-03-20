@@ -9,7 +9,9 @@
 public class Main {
 
 	/**
-	 * @param args
+	 * @param args array of strings
+	 * starts the application
+	 * 
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -17,6 +19,8 @@ public class Main {
 		//object of registration class
 		Registration registration = new Registration();
 		registration.setVisible(true);
+		
+		
 
 	}
 
